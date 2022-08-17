@@ -12,6 +12,10 @@ def save(author):
     author.id = id
     return author
 
+def delete_all():
+    sql = "DELETE FROM authors"
+    run_sql(sql)
+
 def books(author):
     books = []
 
