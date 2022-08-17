@@ -35,7 +35,7 @@ def select_all():
     
     for row in results:
         author = Author(row['author_name'], row['year_born'], row['home_country'], row['id'])
-        authors.appened(author)
+        authors.append(author)
     return authors
 
 def delete_all():

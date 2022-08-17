@@ -5,8 +5,8 @@ from models.author import Author
 import repositories.author_repository as author_repository
 
 def save(book):
-    sql = "INSERT INTO books (title, year_released, genre, author_id) VALUES (%s, %s, %s, %s) RETURNING *"
-    values = [book.title, book.year_released, book.genre, book.author.id]
+    sql = "INSERT INTO books (title, author_id, year_released, genre) VALUES (%s, %s, %s, %s) RETURNING *"
+    values = [book.title, book.author.id, book.year_released, book.genre]
     results = run_sql(sql, values)
     id = results[0]['id']
     book.id = id
@@ -36,8 +36,7 @@ def select_all():
         book = Book(row['title'], 
                     row['year_released'], 
                     row['genre'], 
-                    row['id'], 
-                    author)
+                    row['id'])
         books.append(book)
     return books
     

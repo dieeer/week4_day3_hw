@@ -18,5 +18,6 @@ author_repository.save(author2)
 book1 = Book("Dune", 1965, "sci-fi", author1)
 book_repository.save(book1)
 book2 = Book("Foundation", 1950, "sci-fi", author2)
+book_repository.save(book2)
 
 # pdb.set_trace()

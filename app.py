@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 app.register_blueprint(books_blueprint)
 
-@app.route('/')
+@app.route('/books')
 def home():
     return render_template("index.html")
 
