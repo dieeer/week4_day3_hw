@@ -7,9 +7,10 @@ import repositories.author_repository as author_repository
 
 # book_repository.delete_all()
 # author_repository.delete_all()
+author1 = Author("Frank Herbert", 1920, "United States")
+author_repository.save(author1)
 
 book1 = Book("Dune", 1965, "sci-fi", author1)
-
-author1 = Author("Frank Herbert", 1920, "United States")
+book_repository.save(book1)
 
 pdb.set_trace()
